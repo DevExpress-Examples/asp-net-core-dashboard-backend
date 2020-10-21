@@ -8,10 +8,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Hosting;
 using System;
 
-namespace WebApplication1 {
+namespace AspNetCoreDashboardBackend {
     public class Startup {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -41,6 +40,7 @@ namespace WebApplication1 {
                     configurator.SetDashboardStorage(new DashboardFileStorage(FileProvider.GetFileInfo("App_Data/Dashboards").PhysicalPath));
                     configurator.SetDataSourceStorage(CreateDataSourceStorage());
                     configurator.SetConnectionStringsProvider(new DashboardConnectionStringsProvider(Configuration));
+                    configurator.ConfigureDataConnection += Configurator_ConfigureDataConnection;
                 });
         }
 
@@ -62,17 +62,27 @@ namespace WebApplication1 {
             DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
                         
             DashboardJsonDataSource jsonDataSourceSupport = new DashboardJsonDataSource("Support");
-            Uri fileUri = new Uri(FileProvider.GetFileInfo("App_data/Support.json").PhysicalPath, UriKind.RelativeOrAbsolute);
-            jsonDataSourceSupport.JsonSource = new UriJsonSource(fileUri);
             jsonDataSourceSupport.RootElement = "Employee";
             dataSourceStorage.RegisterDataSource("jsonDataSourceSupport", jsonDataSourceSupport.SaveToXml());
 
             DashboardJsonDataSource jsonDataSourceCategories = new DashboardJsonDataSource("Categories");
-            Uri fileUri1 = new Uri(FileProvider.GetFileInfo("App_data/Categories.json").PhysicalPath, UriKind.RelativeOrAbsolute);
-            jsonDataSourceCategories.JsonSource = new UriJsonSource(fileUri1);
             jsonDataSourceCategories.RootElement = "Products";
             dataSourceStorage.RegisterDataSource("jsonDataSourceCategories", jsonDataSourceCategories.SaveToXml());
             return dataSourceStorage;
+        }
+        private void Configurator_ConfigureDataConnection(object sender, ConfigureDataConnectionWebEventArgs e) {
+            if (e.DataSourceName.Contains("Support")) {
+                Uri fileUri = new Uri(FileProvider.GetFileInfo("App_data/Support.json").PhysicalPath, UriKind.RelativeOrAbsolute);
+                JsonSourceConnectionParameters jsonParams = new JsonSourceConnectionParameters();
+                jsonParams.JsonSource = new UriJsonSource(fileUri);
+                e.ConnectionParameters = jsonParams;
+            }
+            if (e.DataSourceName.Contains("Categories")) {
+                Uri fileUri = new Uri(FileProvider.GetFileInfo("App_data/Categories.json").PhysicalPath, UriKind.RelativeOrAbsolute);
+                JsonSourceConnectionParameters jsonParams = new JsonSourceConnectionParameters();
+                jsonParams.JsonSource = new UriJsonSource(fileUri);
+                e.ConnectionParameters = jsonParams;
+            }
         }
     }
 }

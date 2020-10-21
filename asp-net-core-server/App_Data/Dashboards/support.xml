@@ -3,7 +3,7 @@
   <Title Text="Support" />
   <DataSources>
     <JsonDataSource Name="Support" RootElement="Employee" ComponentName="jsonDataSource1">
-      <Source SourceType="DevExpress.DataAccess.Json.UriJsonSource" Uri="file:///D:/work/projects/WebApplication1/WebApplication1/App_data/Support.json" />
+      <Source SourceType="DevExpress.DataAccess.Json.UriJsonSource" />
       <Schema>
         <Node Name="root" Type="System.Object" Selected="true" NodeType="Object">
           <Node Name="Employee" Selected="true" NodeType="Array">
@@ -16,7 +16,7 @@
       </Schema>
     </JsonDataSource>
     <JsonDataSource Name="Categories" RootElement="Products" ComponentName="jsonDataSource2">
-      <Source SourceType="DevExpress.DataAccess.Json.UriJsonSource" Uri="file:///D:/work/projects/WebApplication1/WebApplication1/App_data/Categories.json" />
+      <Source SourceType="DevExpress.DataAccess.Json.UriJsonSource" />
       <Schema>
         <Node Name="root" Type="System.Object" Selected="true" NodeType="Object">
           <Node Name="CategoryId" Type="System.Nullable`1[System.Int64]" Selected="true" NodeType="Property" />

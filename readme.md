@@ -14,6 +14,7 @@ Run the following command to start server:
 ```
 dotnet run
 ```
+> This server allows CORS requests from _all_ origins with _any_ scheme (http or https). It is insecure because any website can make cross-origin requests to the app. We recommend you to specify the client application's URL directly to prohibit any client from getting access to your server with personal info. Learn more: [Cross-Origin Resource Sharing (CORS)](https://docs.devexpress.com/Dashboard/400709)
 
 In the client application, use the following URL as an [endpoint](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardControlOptions?p=netframework#js_devexpress_dashboard_dashboardcontroloptions_endpoint):
 

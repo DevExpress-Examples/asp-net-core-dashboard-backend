@@ -1,0 +1,83 @@
+using DevExpress.AspNetCore;
+using DevExpress.DashboardAspNetCore;
+using DevExpress.DashboardCommon;
+using DevExpress.DashboardWeb;
+using DevExpress.DataAccess.Json;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Hosting;
+using System;
+
+namespace WebApplication1 {
+    public class Startup {
+        // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment hostingEnvironment) {
+            Configuration = configuration;
+            FileProvider = hostingEnvironment.ContentRootFileProvider;
+        }
+
+        public IConfiguration Configuration { get; }
+        public IFileProvider FileProvider { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services) {
+            // Configures services to use the Web Dashboard Control.
+            services
+                .AddCors(options => {
+                    options.AddPolicy("CorsPolicy", builder => {
+                        builder.AllowAnyOrigin();
+                        builder.AllowAnyMethod();
+                        builder.WithHeaders("Content-Type");
+                    });
+                })
+                .AddDevExpressControls()
+                .AddControllers()
+                .AddDefaultDashboardController(configurator => {
+                    configurator.SetDashboardStorage(new DashboardFileStorage(FileProvider.GetFileInfo("App_Data/Dashboards").PhysicalPath));
+                    configurator.SetDataSourceStorage(CreateDataSourceStorage());
+                    configurator.SetConnectionStringsProvider(new DashboardConnectionStringsProvider(Configuration));
+                });
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+            if (env.IsDevelopment()) {
+                app.UseDeveloperExceptionPage();
+            }
+            app.UseStaticFiles();
+            // Registers the DevExpress middleware.
+            app.UseDevExpressControls();
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseCors("CorsPolicy");
+            app.UseEndpoints(endpoints => {
+                // Maps the dashboard route.
+                EndpointRouteBuilderExtension.MapDashboardRoute(endpoints, "api/dashboard");
+                endpoints.MapControllers().RequireCors("CorsPolicy");
+            });
+        }
+        public DataSourceInMemoryStorage CreateDataSourceStorage() {
+            DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
+                        
+            DashboardJsonDataSource jsonDataSourceSupport = new DashboardJsonDataSource("Support");
+            Uri fileUri = new Uri(FileProvider.GetFileInfo("App_data/Support.json").PhysicalPath, UriKind.RelativeOrAbsolute);
+            jsonDataSourceSupport.JsonSource = new UriJsonSource(fileUri);
+            jsonDataSourceSupport.RootElement = "Employee";
+            jsonDataSourceSupport.Fill();
+            dataSourceStorage.RegisterDataSource("jsonDataSourceSupport", jsonDataSourceSupport.SaveToXml());
+
+            DashboardJsonDataSource jsonDataSourceCategories = new DashboardJsonDataSource("Categories");
+            Uri fileUri1 = new Uri(FileProvider.GetFileInfo("App_data/Categories.json").PhysicalPath, UriKind.RelativeOrAbsolute);
+            jsonDataSourceCategories.JsonSource = new UriJsonSource(fileUri1);
+            jsonDataSourceCategories.RootElement = "Products";
+            jsonDataSourceCategories.Fill();
+            dataSourceStorage.RegisterDataSource("jsonDataSourceCategories", jsonDataSourceCategories.SaveToXml());
+            return dataSourceStorage;
+        }
+    }
+}

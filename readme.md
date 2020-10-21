@@ -22,7 +22,10 @@ http://localhost:5000/api/dashboard
 ```
 
 ## Documentation
-
-Refer to the following article for information on how to configure backend for your needs:
-
 - [Dashboard Backend](https://docs.devexpress.com/Dashboard/402096?v=20.2)
+    
+    Refer to the article for information on how to configure backend for your needs.
+    
+- [Cross-Origin Resource Sharing (CORS)](https://docs.devexpress.com/Dashboard/400709?v=20.2)
+
+    The article describes how to configure corresponding permissions to access resources from a server at a different origin.

@@ -46,21 +46,18 @@ namespace WebApplication1 {
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
-            if (env.IsDevelopment()) {
-                app.UseDeveloperExceptionPage();
-            }
-            app.UseStaticFiles();
             // Registers the DevExpress middleware.
             app.UseDevExpressControls();
             app.UseRouting();
-            app.UseAuthorization();
             app.UseCors("CorsPolicy");
             app.UseEndpoints(endpoints => {
                 // Maps the dashboard route.
                 EndpointRouteBuilderExtension.MapDashboardRoute(endpoints, "api/dashboard");
+                // Requires CORS policies.
                 endpoints.MapControllers().RequireCors("CorsPolicy");
             });
         }
+
         public DataSourceInMemoryStorage CreateDataSourceStorage() {
             DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
                         

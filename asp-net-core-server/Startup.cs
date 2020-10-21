@@ -68,14 +68,12 @@ namespace WebApplication1 {
             Uri fileUri = new Uri(FileProvider.GetFileInfo("App_data/Support.json").PhysicalPath, UriKind.RelativeOrAbsolute);
             jsonDataSourceSupport.JsonSource = new UriJsonSource(fileUri);
             jsonDataSourceSupport.RootElement = "Employee";
-            jsonDataSourceSupport.Fill();
             dataSourceStorage.RegisterDataSource("jsonDataSourceSupport", jsonDataSourceSupport.SaveToXml());
 
             DashboardJsonDataSource jsonDataSourceCategories = new DashboardJsonDataSource("Categories");
             Uri fileUri1 = new Uri(FileProvider.GetFileInfo("App_data/Categories.json").PhysicalPath, UriKind.RelativeOrAbsolute);
             jsonDataSourceCategories.JsonSource = new UriJsonSource(fileUri1);
             jsonDataSourceCategories.RootElement = "Products";
-            jsonDataSourceCategories.Fill();
             dataSourceStorage.RegisterDataSource("jsonDataSourceCategories", jsonDataSourceCategories.SaveToXml());
             return dataSourceStorage;
         }

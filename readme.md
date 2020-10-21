@@ -4,7 +4,7 @@ This example is an ASP.NET Core backend application.
 
 The Web Dashboard is a client-side control that communicates with server part using HTTP requests:
 
-- The **client part** is a JavaScript application that supplies end users with a UI for designing a dashboard and interacting with it. The @js-DevExpress.Dashboard.DashboardControl is an underlying control.
+- The **client part** is a JavaScript application that supplies end users with a UI for designing a dashboard and interacting with it. The [DashboardControl](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardControl) is an underlying control.
 - The **server part** is an ASP.NET Core or ASP.NET MVC application that handles client data requests and provides various backend capabilities such as accessing data, storing dashboards, etc.
 
 ## Quick Start

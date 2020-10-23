@@ -1,6 +1,6 @@
-# ASP.NET Core backend for Web Dashboard
+# ASP.NET Core 3.1 backend for Web Dashboard
 
-This example is an ASP.NET Core backend application for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard?v=20.2).
+This example is an ASP.NET Core 3.1 backend application for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard?v=20.2).
 
 The Web Dashboard is a client-side control that communicates with server part using HTTP requests:
 

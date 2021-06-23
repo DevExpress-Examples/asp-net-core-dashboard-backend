@@ -25,12 +25,6 @@ In the client application, set the following URL as an [endpoint](https://docs.d
 http://localhost:5000/api/dashboard
 ```
 
-## More Examples
-
-- [Get Started - Client-Side Dashboard Application (Angular)](https://github.com/DevExpress-Examples/dashboard-angular-app)
-- [Get Started - Client-Side Dashboard Application (React)](https://github.com/DevExpress-Examples/dashboard-react-app)
-- [Get Started - Client-Side Dashboard Application (Vue)](https://github.com/DevExpress-Examples/dashboard-vue-app)
-
 ## Documentation
 - [Dashboard Backend](https://docs.devexpress.com/Dashboard/402096?v=20.2)
     
@@ -39,3 +33,9 @@ http://localhost:5000/api/dashboard
 - [Cross-Origin Resource Sharing (CORS)](https://docs.devexpress.com/Dashboard/400709?v=20.2)
 
     The article describes how to configure corresponding permissions to access resources from a server at a different origin.
+    
+## More Examples
+
+- [Get Started - Client-Side Dashboard Application (Angular)](https://github.com/DevExpress-Examples/dashboard-angular-app)
+- [Get Started - Client-Side Dashboard Application (React)](https://github.com/DevExpress-Examples/dashboard-react-app)
+- [Get Started - Client-Side Dashboard Application (Vue)](https://github.com/DevExpress-Examples/dashboard-vue-app)

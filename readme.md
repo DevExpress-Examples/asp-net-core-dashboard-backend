@@ -1,4 +1,4 @@
-# ASP.NET Core 3.1 backend for Web Dashboard
+# Dashboard for ASP.NET Core - Backend
 
 This example is an ASP.NET Core 3.1 backend application (server) for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard?v=20.2). The server handles client data requests and includes various backend capabilities such as data access, dashboard storage, etc. 
 

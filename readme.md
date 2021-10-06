@@ -3,11 +3,6 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T942028)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
-
-* [Startup.cs](./asp-net-core-server/Startup.cs)
-<!-- default file list end -->
 
 # Dashboard for ASP.NET Core - Backend
 
@@ -32,6 +27,14 @@ In the client application, set the following URL as an [endpoint](https://docs.d
 ```
 http://localhost:5000/api/dashboard
 ```
+
+<!-- default file list -->
+## Files to Look At
+
+* [Startup.cs](./asp-net-core-server/Startup.cs)
+* [DefaultDashboardController.cs](./asp-net-core-server/DefaultDashboardController.cs)
+<!-- default file list end -->
+
 
 ## Documentation
 - [Dashboard Backend](https://docs.devexpress.com/Dashboard/402096?v=20.2)

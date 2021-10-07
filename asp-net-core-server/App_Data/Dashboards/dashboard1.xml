@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Customers" />
+  <DataSources>
+    <JsonDataSource Name="Customers" RootElement="Customers" ComponentName="jsonDataSource1" />
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Customers" DataSource="jsonDataSource1">
+      <DataItems>
+        <Dimension DataMember="CompanyName" DefaultId="DataItem0" />
+        <Dimension DataMember="ContactName" DefaultId="DataItem1" />
+        <Dimension DataMember="Address" DefaultId="DataItem2" />
+        <Dimension DataMember="Phone" DefaultId="DataItem3" />
+        <Dimension DataMember="PostalCode" DefaultId="DataItem4" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <ComboBox ComponentName="comboBoxDashboardItem1" Name="Country" DataSource="jsonDataSource1">
+      <DataItems>
+        <Dimension DataMember="Country" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ComboBox>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup Orientation="Vertical">
+        <LayoutItem DashboardItem="comboBoxDashboardItem1" />
+        <LayoutItem DashboardItem="gridDashboardItem1" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

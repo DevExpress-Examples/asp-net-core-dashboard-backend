@@ -12,9 +12,6 @@ using System;
 
 namespace AspNetCoreDashboardBackend {
     public class Startup {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-
         public Startup(IConfiguration configuration, IWebHostEnvironment hostingEnvironment) {
             Configuration = configuration;
             FileProvider = hostingEnvironment.ContentRootFileProvider;
@@ -23,7 +20,6 @@ namespace AspNetCoreDashboardBackend {
         public IConfiguration Configuration { get; }
         public IFileProvider FileProvider { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             // Configures services to use the Web Dashboard Control.
             services
@@ -46,7 +42,6 @@ namespace AspNetCoreDashboardBackend {
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
             // Registers the DevExpress middleware.
             app.UseDevExpressControls();

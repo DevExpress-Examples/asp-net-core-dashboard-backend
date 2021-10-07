@@ -5,4 +5,7 @@
   <ItemGroup>
     <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="21.2.1-beta-21273" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\Dashboards\" />
+  </ItemGroup>
 </Project>

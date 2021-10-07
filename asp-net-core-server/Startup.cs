@@ -59,28 +59,16 @@ namespace AspNetCoreDashboardBackend {
                 endpoints.MapControllers().RequireCors("CorsPolicy");
             });
         }
-
         public DataSourceInMemoryStorage CreateDataSourceStorage() {
             DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
-                        
-            DashboardJsonDataSource jsonDataSourceSupport = new DashboardJsonDataSource("Support");
-            jsonDataSourceSupport.RootElement = "Employee";
-            dataSourceStorage.RegisterDataSource("jsonDataSourceSupport", jsonDataSourceSupport.SaveToXml());
-
-            DashboardJsonDataSource jsonDataSourceCategories = new DashboardJsonDataSource("Categories");
-            jsonDataSourceCategories.RootElement = "Products";
-            dataSourceStorage.RegisterDataSource("jsonDataSourceCategories", jsonDataSourceCategories.SaveToXml());
+            DashboardJsonDataSource jsonDataSource = new DashboardJsonDataSource("Customers");
+            jsonDataSource.RootElement = "Customers";
+            dataSourceStorage.RegisterDataSource("jsonDataSourceSupport", jsonDataSource.SaveToXml());
             return dataSourceStorage;
         }
         private void Configurator_ConfigureDataConnection(object sender, ConfigureDataConnectionWebEventArgs e) {
-            if (e.DataSourceName.Contains("Support")) {
-                Uri fileUri = new Uri(FileProvider.GetFileInfo("App_data/Support.json").PhysicalPath, UriKind.RelativeOrAbsolute);
-                JsonSourceConnectionParameters jsonParams = new JsonSourceConnectionParameters();
-                jsonParams.JsonSource = new UriJsonSource(fileUri);
-                e.ConnectionParameters = jsonParams;
-            }
-            if (e.DataSourceName.Contains("Categories")) {
-                Uri fileUri = new Uri(FileProvider.GetFileInfo("App_data/Categories.json").PhysicalPath, UriKind.RelativeOrAbsolute);
+            if (e.DataSourceName.Contains("Customers")) {
+                Uri fileUri = new Uri("https://raw.githubusercontent.com/DevExpress-Examples/DataSources/master/JSON/customers.json");
                 JsonSourceConnectionParameters jsonParams = new JsonSourceConnectionParameters();
                 jsonParams.JsonSource = new UriJsonSource(fileUri);
                 e.ConnectionParameters = jsonParams;

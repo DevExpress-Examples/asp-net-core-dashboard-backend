@@ -6,7 +6,9 @@
 
 # Dashboard for ASP.NET Core - Backend
 
-This example is an ASP.NET Core 3.1 backend application (server) for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard?v=20.2). The server handles client data requests and includes various backend capabilities such as data access, dashboard storage, etc. 
+This example is an ASP.NET Core 3.1 backend application (server) for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard?v=20.2). The server handles client data requests and includes backend capabilities such as data access, dashboard storage, etc.
+
+This server contains a dashboard connected to a JSON data source. The data source obtains data from the following connection: `https://raw.githubusercontent.com/DevExpress-Examples/DataSources/master/JSON/customers.json`.
 
 This application does not have any views. Configure and launch a client application to display data from this server.
 

@@ -1,12 +1,13 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/306050958/20.2.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T942028)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
 # Dashboard for ASP.NET Core - Backend
 
-This example is an ASP.NET Core 3.1 backend application (server) for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard?v=20.2). The server handles client data requests and includes various backend capabilities such as data access, dashboard storage, etc. 
+This example is an ASP.NET Core 3.1 backend application (server) for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard). The server handles client data requests and includes backend capabilities such as data access, dashboard storage, and so on.
+
+This server contains a dashboard connected to a JSON data source. The data source obtains data from the following connection: `https://raw.githubusercontent.com/DevExpress-Examples/DataSources/master/JSON/customers.json`.
 
 This application does not have any views. Configure and launch a client application to display data from this server.
 
@@ -37,11 +38,11 @@ http://localhost:5000/api/dashboard
 
 
 ## Documentation
-- [Dashboard Backend](https://docs.devexpress.com/Dashboard/402096?v=20.2)
+- [Dashboard Backend](https://docs.devexpress.com/Dashboard/402096)
     
     Refer to the article for information on how to configure backend for your needs.
     
-- [Cross-Origin Resource Sharing (CORS)](https://docs.devexpress.com/Dashboard/400709?v=20.2)
+- [Cross-Origin Resource Sharing (CORS)](https://docs.devexpress.com/Dashboard/400709)
 
     The article describes how to configure corresponding permissions to access resources from a server at a different origin.
     

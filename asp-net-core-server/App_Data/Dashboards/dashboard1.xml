@@ -2,7 +2,7 @@
 <Dashboard>
   <Title Text="Customers" />
   <DataSources>
-    <JsonDataSource Name="Customers" RootElement="Customers" ComponentName="jsonDataSource1" />
+    <JsonDataSource Name="Customers" RootElement="Customers" ComponentName="jsonDataSource1" ConnectionName="jsonDataSourceConnection" />
   </DataSources>
   <Items>
     <Grid ComponentName="gridDashboardItem1" Name="Customers" DataSource="jsonDataSource1">

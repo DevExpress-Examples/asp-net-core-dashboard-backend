@@ -57,12 +57,13 @@ namespace AspNetCoreDashboardBackend {
         public DataSourceInMemoryStorage CreateDataSourceStorage() {
             DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
             DashboardJsonDataSource jsonDataSource = new DashboardJsonDataSource("Customers");
+            jsonDataSource.ConnectionName = "jsonDataSourceConnection";
             jsonDataSource.RootElement = "Customers";
             dataSourceStorage.RegisterDataSource("jsonDataSourceSupport", jsonDataSource.SaveToXml());
             return dataSourceStorage;
         }
         private void Configurator_ConfigureDataConnection(object sender, ConfigureDataConnectionWebEventArgs e) {
-            if (e.DataSourceName.Contains("Customers")) {
+            if (e.ConnectionName == "jsonDataSourceConnection") {
                 Uri fileUri = new Uri("https://raw.githubusercontent.com/DevExpress-Examples/DataSources/master/JSON/customers.json");
                 JsonSourceConnectionParameters jsonParams = new JsonSourceConnectionParameters();
                 jsonParams.JsonSource = new UriJsonSource(fileUri);

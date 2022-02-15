@@ -6,7 +6,7 @@
 
 # Dashboard for ASP.NET Core - Backend
 
-This example is an ASP.NET Core 3.1 backend application (server) for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard). The server handles client data requests and includes backend capabilities such as data access, dashboard storage, and so on.
+This example is an ASP.NET Core 6.0 backend application (server) for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard). The server handles client data requests and includes backend capabilities such as data access, dashboard storage, and so on.
 
 This server contains a dashboard connected to a JSON data source. The data source obtains data from the following connection: `https://raw.githubusercontent.com/DevExpress-Examples/DataSources/master/JSON/customers.json`.
 
@@ -33,8 +33,8 @@ http://localhost:5000/api/dashboard
 <!-- default file list -->
 ## Files to Look At
 
-* [Startup.cs](./asp-net-core-server/Startup.cs)
-* [DefaultDashboardController.cs](./asp-net-core-server/DefaultDashboardController.cs)
+* [Startup.cs](./CS/AspNetCoreDashboardBackend/Program.cs)
+* [DefaultDashboardController.cs](./CS/AspNetCoreDashboardBackend/DefaultDashboardController.cs)
 <!-- default file list end -->
 
 

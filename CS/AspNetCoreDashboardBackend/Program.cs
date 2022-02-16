@@ -29,11 +29,10 @@ var app = builder.Build();
 app.UseDevExpressControls();
 app.UseRouting();
 app.UseCors("CorsPolicy");
-app.UseEndpoints(endpoints => {
-    // Maps the dashboard route.
-    EndpointRouteBuilderExtension.MapDashboardRoute(endpoints, "api/dashboard", "DefaultDashboard");
-    // Requires CORS policies.
-    endpoints.MapControllers().RequireCors("CorsPolicy");
-});
+
+// Maps the dashboard route.
+EndpointRouteBuilderExtension.MapDashboardRoute(app, "api/dashboard", "DefaultDashboard");
+// Requires CORS policies.
+app.MapControllers().RequireCors("CorsPolicy");
 
 app.Run();

@@ -33,7 +33,7 @@ http://localhost:5000/api/dashboard
 <!-- default file list -->
 ## Files to Look At
 
-* [Startup.cs](./CS/AspNetCoreDashboardBackend/Program.cs)
+* [Program.cs](./CS/AspNetCoreDashboardBackend/Program.cs)
 * [DashboardUtils.cs](./CS/AspNetCoreDashboardBackend/Code/DashboardUtils.cs)
 * [DefaultDashboardController.cs](./CS/AspNetCoreDashboardBackend/DefaultDashboardController.cs)
 <!-- default file list end -->

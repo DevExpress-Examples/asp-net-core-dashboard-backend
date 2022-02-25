@@ -30,7 +30,7 @@ In the client application, set the following URL as an [endpoint](https://docs.d
 http://localhost:5000/api/dashboard
 ```
 
-To debug the server, run the **asp-net-core-server** application in Visual Studio and change the client's `endpoint` property according to the listening port: `https://localhost:44395/api/dashboard`.
+To debug the server, run the **AspNetCoreDashboardBackend** application in Visual Studio and change the client's `endpoint` property according to the listening port: `https://localhost:44395/api/dashboard`.
 
 <!-- default file list -->
 ## Files to Look At

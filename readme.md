@@ -10,7 +10,7 @@ This example is an ASP.NET Core 6.0 backend application (server) for the [DevExp
 
 This server contains a dashboard connected to a JSON data source. The data source obtains data from the following connection: `https://raw.githubusercontent.com/DevExpress-Examples/DataSources/master/JSON/customers.json`.
 
-This application does not have any views. Configure and launch a client application to display data from this server.
+> **Warning** This application does not have any views. Configure and launch a client application to display data from this server.
 
 ## Quick Start
 

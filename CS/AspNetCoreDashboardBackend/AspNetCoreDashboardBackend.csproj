@@ -6,6 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="21.2.5" />
+    <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="22.2.*" />
   </ItemGroup>
 </Project>

@@ -32,8 +32,7 @@ http://localhost:5000/api/dashboard
 
 To debug the server, run the **AspNetCoreDashboardBackend** application in Visual Studio and change the client's `endpoint` property according to the listening port: `https://localhost:44395/api/dashboard`.
 
-<!-- default file list -->
-## Files to Look At
+## Files to Review
 
 * [Program.cs](./CS/AspNetCoreDashboardBackend/Program.cs)
 * [DashboardUtils.cs](./CS/AspNetCoreDashboardBackend/Code/DashboardUtils.cs)
@@ -42,18 +41,11 @@ To debug the server, run the **AspNetCoreDashboardBackend** application in Visua
 
 
 ## Documentation
-- [Dashboard Backend](https://docs.devexpress.com/Dashboard/402096)
-    
-    Refer to the article for information on how to configure backend for your needs.
-    
-- [Cross-Origin Resource Sharing (CORS)](https://docs.devexpress.com/Dashboard/400709)
 
-    The article describes how to configure corresponding permissions to access resources from a server at a different origin.
-    
+- [Dashboard Backend](https://docs.devexpress.com/Dashboard/402096)    
+- [Cross-Origin Resource Sharing (CORS)](https://docs.devexpress.com/Dashboard/400709)    
 - [Install DevExpress Controls Using NuGet Packages](https://docs.devexpress.com/GeneralInformation/115912/installation/install-devexpress-controls-using-nuget-packages)
-    
-    The following section contains information on how to install NuGet packages from the DevExpress NuGet feed.
-    
+        
 ## More Examples
 
 - [Get Started - Client-Side Dashboard Application (Angular)](https://github.com/DevExpress-Examples/dashboard-angular-app)

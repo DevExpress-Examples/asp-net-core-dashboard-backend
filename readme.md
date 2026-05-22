@@ -7,7 +7,7 @@
 
 # Dashboard for ASP.NET Core - Backend
 
-This example is an ASP.NET Core 6.0 backend application (server) for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard). The server handles client data requests and includes backend capabilities such as data access, dashboard storage, and so on.
+This example is an ASP.NET Core 8.0 backend application (server) for the [DevExpress Web Dashboard](https://docs.devexpress.com/Dashboard/115955/web-dashboard). The server handles client data requests and includes backend capabilities such as data access, dashboard storage, and so on.
 
 This server contains a dashboard connected to a JSON data source. The data source obtains data from the following connection: `https://raw.githubusercontent.com/DevExpress-Examples/DataSources/master/JSON/customers.json`.
 
@@ -21,9 +21,7 @@ Run the following command to start server:
 dotnet run
 ```
 
-See the following section for information on how to install NuGet packages from the DevExpress NuGet feed: [Install DevExpress Controls Using NuGet Packages](https://docs.devexpress.com/GeneralInformation/115912/installation/install-devexpress-controls-using-nuget-packages).
-
-> This server allows CORS requests from _all_ origins with _any_ scheme (http or https). This default configuration is insecure: any website can make cross-origin requests to the app. We recommend that you specify the client application's URL to prohibit other clients from accessing sensitive information stored on the server. Learn more: [Cross-Origin Resource Sharing (CORS)](https://docs.devexpress.com/Dashboard/400709)
+This server allows CORS requests from _all_ origins with _any_ scheme (http or https). This default configuration is insecure: any website can make cross-origin requests to the app. We recommend that you specify the client application's URL to prohibit other clients from accessing sensitive information stored on the server. Learn more: [Cross-Origin Resource Sharing (CORS)](https://docs.devexpress.com/Dashboard/400709)
 
 In the client application, set the following URL as an [endpoint](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardControlOptions?p=netframework#js_devexpress_dashboard_dashboardcontroloptions_endpoint):
 
